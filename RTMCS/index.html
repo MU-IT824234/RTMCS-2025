@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RTMCS-2025 | National Conference - Magadh University</title>
+
+  <!-- Colors: Magadh University -->
+  <style>
+    :root{
+      --mu-blue:#003366;
+      --mu-gold:#DAA520;
+      --muted:#f6f7f9;
+      --max-width:1100px;
+      --card-radius:12px;
+      --container-pad:24px;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#222;
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position:sticky;
+      top:0;
+      z-index:999;
+      background-color:white;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 18px;
+    }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img{ height:52px; width:auto; display:block; }
+    .brand h4{ margin:0; color:var(--mu-blue); font-size:16px; letter-spacing:0.2px; }
+    .menu { display:flex; gap:16px; align-items:center; }
+    .menu a{
+      color:var(--mu-blue); text-decoration:none; font-weight:600; font-size:14px;
+      padding:8px 10px; border-radius:8px;
+    }
+    .menu a:hover{ background:rgba(0,0,0,0.04); }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      background-image: url('hero-bg.jpg');
+      background-size:cover;
+      background-position:center;
+      color:white;
+      padding:56px 18px 44px;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,19,51,0.72), rgba(0,19,51,0.78));
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:flex;
+      gap:28px;
+      align-items:center;
+      justify-content:space-between;
+      padding:36px;
+      color: #fff;
+    }
+    .hero-left{ text-align:left; flex:1; z-index:2; }
+    .logo-wrap{ text-align:center; margin-bottom:18px; }
+    .logo-wrap img{ max-height:120px; display:inline-block; }
+
+    .title{
+      font-size:28px; font-weight:700; margin:6px 0 6px; color:#fff;
+    }
+    .subtitle{ font-size:16px; margin:0 0 12px; opacity:0.95; }
+    .hero-meta{ display:flex; gap:12px; align-items:center; margin:12px 0 18px; flex-wrap:wrap; }
+    .pill{ background: rgba(255,255,255,0.08); padding:8px 12px; border-radius:999px; font-weight:600; }
+    .hero-ctas{ display:flex; gap:12px; margin-top:8px; flex-wrap:wrap; }
+    .btn {
+      display:inline-block; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .btn-gold{ background:var(--mu-gold); color:var(--mu-blue); }
+    .btn-white{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.18); }
+
+    /* Countdown */
+    .countdown { display:flex; gap:10px; margin-top:12px; }
+    .countdown .unit{
+      background:rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px; min-width:72px; text-align:center;
+    }
+    .unit .num{ font-size:20px; font-weight:800; color:var(--mu-gold); display:block; }
+    .unit .lab{ font-size:11px; color:#fff; opacity:0.88; margin-top:4px; }
+
+    /* CONTENT WRAPPER */
+    .wrap{ max-width:var(--max-width); margin:0 auto; padding:32px 18px; }
+
+    /*QUICK INFO */
+    .quick-info {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(218, 165, 32, 0.85)),
+                  url('hero-bg.jpg') center/cover no-repeat;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 24px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .quick-info:hover {
+      transform: rotateY(6deg) rotateX(3deg) scale(1.04);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+    }
+    .quick-info h3 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #fff;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .quick-info p {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fdfdfd;
+    }
+
+    /* qr code */
+    .qr-code-box {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 51, 102, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.qr-code-box:hover {
+  transform: scale(1.05);
+}
+.qr-code-box img {
+  max-width: 150px;
+  border-radius: 8px;
+}
+.qr-code-box p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mu-blue);
+}
+
+
+
+
+
+
+
+    /* Sections */
+    section{ margin-bottom:28px; opacity:0; transform:translateY(18px); transition: all 700ms cubic-bezier(.15,.9,.3,1); }
+    section.visible{ opacity:1; transform:none; }
+    .card{ background: #fff; border-radius:var(--card-radius); padding:20px; box-shadow: 0 10px 30px rgba(3,3,3,0.06); }
+
+    h2{ color:var(--mu-blue); margin-top:0; font-size:20px; }
+    p{ margin:0 0 12px; color:#222; }
+
+    /* two-column layout */
+    .cols{ display:flex; gap:20px; align-items:flex-start; }
+    .col{ flex:1; min-width:260px; }
+
+    /* Topics grid */
+    .topics-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .topic{ border:1px solid rgba(0,0,0,0.06); padding:12px; border-radius:10px; background:#fff; font-weight:600; }
+
+    /* Fee Table */
+    .fee-table{ width:100%; border-collapse:collapse; margin-top:12px; }
+    .fee-table th, .fee-table td{ padding:14px 12px; text-align:left; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .fee-table thead th{ background:linear-gradient(90deg, rgba(218,165,32,0.12), rgba(0,0,0,0.02)); color:var(--mu-blue); font-weight:800; }
+    .fee-table tbody tr:hover{ background:linear-gradient(90deg, rgba(218,165,32,0.04), rgba(0,0,0,0.02)); }
+
+    /* Timeline */
+    .timeline{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .t-item{ background:#fff; padding:12px; border-radius:10px; min-width:170px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
+    .t-item .date{ font-weight:800; color:var(--mu-blue); }
+
+    /* Registration form (static) */
+    .reg-form{ display:flex; flex-direction:column; gap:12px; margin-top:12px; }
+    .reg-form input, .reg-form textarea, .reg-form select{ padding:12px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); width:100%; }
+    .reg-form button{ width:220px; padding:12px; border-radius:8px; border:none; cursor:pointer; background:var(--mu-blue); color:#fff; font-weight:800; }
+
+    /* Footer */
+    footer{ background:var(--mu-blue); color:white; padding:26px 18px; margin-top:24px; }
+    .footer-inner{ max-width:var(--max-width); margin:0 auto; display:flex; gap:20px; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; }
+    .footer-links a{ color:#fff; text-decoration:none; display:block; margin-bottom:8px; }
+    .copyright { opacity:0.9; }
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero-inner{ flex-direction:column; text-align:center; gap:18px; padding:36px 18px; }
+      .menu{ display:none; }
+      .cols{ flex-direction:column; }
+      .nav-inner{ padding:10px; }
+      .hero-left{ width:100%;}
+      .logo-wrap img{ max-height:100px;}
+    }
+    @media (max-width:520px){
+      .title{ font-size:20px; }
+      .countdown .unit{ min-width:58px; padding:8px; }
+      .hero-inner{ padding:20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav" aria-hidden="false">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="logo.png  " alt="Magadh University Logo">
+        <h4>RTMCS-2025 • Magadh University</h4>
+      </div>
+      <div class="menu" id="menu">
+        <a href="#about">About</a>
+        <a href="#topics">Topics</a>
+        <a href="#dates">Dates</a>
+        <a href="#registration">Registration</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <!-- <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="logo-wrap">
+          <img src="logo.png" alt="Conference Logo">
+        </div>
+        <div class="title">National Conference on “Recent Trends in Mathematical and Computational Sciences” (RTMCS-2025)</div>
+        <div class="subtitle">November 28–29, 2025 • Magadh University, Bodh Gaya</div>
+
+        <div class="hero-meta">
+          <div class="pill">Organized by P.G. Dept. of Mathematics & Dept. of CS & IT</div>
+          <div class="pill">Sponsored by Soft Computing Research Society (SCRS)</div>
+        </div>
+
+        <div class="countdown" aria-hidden="false" id="countdown">
+          <div class="unit"><span class="num" id="cd-days">--</span><span class="lab">Days</span></div>
+          <div class="unit"><span class="num" id="cd-hours">--</span><span class="lab">Hours</span></div>
+          <div class="unit"><span class="num" id="cd-mins">--</span><span class="lab">Minutes</span></div>
+          <div class="unit"><span class="num" id="cd-secs">--</span><span class="lab">Seconds</span></div>
+        </div>
+
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="Brochure_final.pdf" download>Download Brochure (PDF)</a>
+          <a class="btn btn-white" href="https://tinyurl.com/RTMCS-2025" target="_blank" rel="noopener">Register Now</a>
+        </div>
+      </div>
+
+      <div style="flex:0 0 320px; text-align:center;">
+        <div class="card" style="color:var(--mu-blue); border-radius:12px;">
+          <div class="quick-info">
+            <h3>Quick Info</h3>
+            <p>Registration Ends: <strong>20 Nov 2025</strong></p>
+            <p>Spot Registration: <strong>28 Nov 2025</strong></p>
+            <p>Venue: <strong>Magadh University, Bodh Gaya</strong></p>
+          </div>
+          
+      </div>
+    </div>
+  </header> -->
+
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="logo-wrap">
+          <img src="logo2.png" alt="Conference Logo">
+          <img src="logo.png" alt="Conference Logo">
+          <img src="logo3.jpg" alt="Conference Logo">
+        </div>
+        <div class="title">National Conference on “Recent Trends in Mathematical and Computational Sciences” (RTMCS-2025)</div>
+        <div class="subtitle">November 28–29, 2025 • Magadh University, Bodh Gaya</div>
+  
+        <div class="hero-meta">
+          <div class="pill">Organized by P.G. Dept. of Mathematics & Dept. of CS & IT</div>
+          <div class="pill">Sponsored by Soft Computing Research Society (SCRS)</div>
+        </div>
+  
+        <div class="countdown" aria-hidden="false" id="countdown">
+          <div class="unit"><span class="num" id="cd-days">--</span><span class="lab">Days</span></div>
+          <div class="unit"><span class="num" id="cd-hours">--</span><span class="lab">Hours</span></div>
+          <div class="unit"><span class="num" id="cd-mins">--</span><span class="lab">Minutes</span></div>
+          <div class="unit"><span class="num" id="cd-secs">--</span><span class="lab">Seconds</span></div>
+        </div>
+  
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="Brochure_final.pdf" download>Download Brochure (PDF)</a>
+          <a class="btn btn-white" href="https://tinyurl.com/RTMCS-2025" target="_blank" rel="noopener">Register Now</a>
+        </div>
+      </div>
+  
+      <div style="flex:0 0 320px; text-align:center;">
+        <div class="quick-info">
+          <h3>Quick Info</h3>
+          <p>Registration Ends: <strong>20 Nov 2025</strong></p>
+          <p>Spot Registration: <strong>28 Nov 2025</strong></p>
+          <p>Venue: <strong>Magadh University, Bodh Gaya</strong></p>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- MAIN CONTENT -->
+  <main class="wrap" id="main">
+
+    <!-- ABOUT / UNIVERSITY / DEPARTMENT / CITY -->
+    <section id="about" class="card">
+      <h3 style="margin:0 0 8px;">About the University</h3>
+       <p style="text-align: justify;">Magadh University, Bodh Gaya, was founded on March 1, 1962, through the vision and dedication of scholars and educationists from the Magadh region. Its first Vice-Chancellor was Prof. (Dr.) K. K. Dutta, an eminent historian and academic of international standing. The establishment of the University’s campus became possible due to the generous donation of land by Shri Satanand Giri, the revered Mahant of Bodh Gaya Math, at the request of the then Education Minister. On August 20, 1964, the foundation stone of the present campus was laid by Dr. Sarvepalli Radhakrishnan, the then President of India.</p>
+
+        <p style="text-align: justify;">Today, Magadh University is recognized as one of Bihar’s leading institutions of higher education. It offers postgraduate programs in 22 disciplines across the faculties of Science, Social Science, Humanities, and Commerce. Alongside traditional courses, the University provides a diverse range of vocational and professional programs in fields such as Education, Physiotherapy, Information Technology, Management, Environmental Science, Library Science, and Biotechnology.</p>
+        
+        <p style="text-align: justify;">With its enduring commitment to academic excellence, research, and holistic growth, the University continues to be a hub of knowledge and innovation, nurturing future scholars and professionals. At present, the Vice-Chancellor, Prof. Shashi Pratap Shahi, is actively working to restore and enhance the University’s proud legacy by reinforcing its focus on quality education and encouraging faculty members to engage in conferences, seminars, and workshops at both national and international platforms.</p>
+      
+
+      <div class="cols" style="margin-top:18px;">
+        <div class="col">
+          <p class="card">
+            <h3 style="margin:0 0 8px;">About the Department</h3>
+            <p style="text-align: justify;">TThe Postgraduate Department of Mathematics at Magadh University was established in 1962. In its formative years, classes were conducted in a rented building, as the University had not yet developed its own infrastructure. The Department’s journey began with the appointment of Dr. Shyam Sundar Prasad, who joined after being transferred from Nalanda College, Bihar Sharif. He was soon joined by eminent academicians including Dr. R. Shukla (Professor & Head), Dr. Shaligram Singh (Reader), Dr. Ziaul Hasan (Lecturer), and Dr. P. Tiwari (Lecturer).</p>
+
+            <p style="text-align: justify;"></p> With the relocation of the University to its permanent campus at Bodh Gaya on December 15, 1969, the Department of Mathematics also moved into a newly constructed facility. The spacious and well-equipped environment provided a strong foundation for advancing both teaching and research activities.</p>
+              
+            <p style="text-align: justify;">Over the years, the Department has gained recognition for its noteworthy contributions to diverse fields such as Set Theory, Topology, Algebra, Fuzzy Mathematics, Relativity Theory, Fixed Point Theory, Topological Dynamics, Bio-Mathematics, and Differential Equations. Alongside postgraduate programs, the Department offers research opportunities leading to Ph.D. and D.Sc. degrees, nurturing scholars who have made impactful contributions to the growth of mathematical sciences.</p>
+              
+            <p style="text-align: justify;">At present, the Department has nine dedicated faculty members whose research and teaching expertise cover a wide range of subjects in both Pure and Applied Mathematics, ensuring a vibrant academic environment for learners and researchers alike.</p>
+         
+         
+          </div>
+        </div>
+             
+        <div class="col">
+          <div class="card">
+            <h3 style="margin:0 0 8px;">About the City</h3>
+            <p>Gaya (Gayaji) is an ancient cultural centre drawing pilgrims and scholars worldwide. Nearby Bodh Gaya is the place of Lord Buddha's enlightenment, making the region globally significant for pilgrims and researchers alike.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div class="card">
+          <h2>About the Conference</h2>
+          <p>The conference aims to serve as a dynamic platform for academicians, researchers and industry experts to share, exchange, and disseminate their knowledge on recent developments and emerging trends in Pure Mathematics, Applied Mathematics, Computer Science, Physics, and Chemistry. A special focus is placed on motivating and engaging young researchers and students.</p>  
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section id="topics" class="card">
+      <h2>Conference Topics</h2>
+      <div class="topics-grid" style="margin-top:12px;">
+        <div class="topic">Algebra</div>
+        <div class="topic">Analysis</div>
+        <div class="topic">Artificial Intelligence</div>
+        <div class="topic">Big Data Analytics</div>
+        <div class="topic">Biostatistics</div>
+        <div class="topic">Coding Theory</div>
+        <div class="topic">Cryptography</div>
+        <div class="topic">Data Science</div>
+        <div class="topic">Deep Learning</div>
+        <div class="topic">Differential Equations</div>
+        <div class="topic">Discrete Mathematics</div>
+        <div class="topic">Dynamical System</div>
+        <div class="topic">Fuzzy Logic & Systems</div>
+        <div class="topic">Machine Learning</div>
+        <div class="topic">Mathematical Modeling</div>
+        <div class="topic">Number Theory</div>
+        <div class="topic">Optimization Techniques</div>
+        <div class="topic">Soft Computing</div>
+        <div class="topic">IoT</div>
+        <div class="topic">Cyber Security</div>
+      </div>
+    </section>
+
+    <!-- CALL FOR ABSTRACTS -->
+    <section id="abstracts" class="card">
+      <h2>Call for Abstracts</h2>
+      <p>Abstracts (original research) are invited for presentation. Abstract should be in English, limited to <strong>300 words</strong> with title, affiliation and email id. Submit via email to: <a href="mailto:rtmcs2025@gmail.com">rtmcs2025@gmail.com</a>.</p>
+      <p><strong>Text Format:</strong> Microsoft Word</p>
+      <p><strong>Title:</strong> Limited to 250 characters; use initial caps (no ALL CAPS).</p>
+      <p><strong>Authors/Email/Keywords:</strong> Include affiliations and a maximum of 5 keywords.</p>
+    </section>
+
+    <!-- IMPORTANT DATES -->
+    <section id="dates" class="card">
+      <h2>Important Dates</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">10 Sep 2025</div>
+          <div class="muted">Registration Starts</div>
+        </div>
+        <div class="t-item">
+          <div class="date">20 Nov 2025</div>
+          <div class="muted">Registration Ends (Early Bird)</div>
+        </div>
+        <div class="t-item">
+          <div class="date">28 Nov 2025</div>
+          <div class="muted">Spot Registration / Conference Starts</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEE TABLE -->
+    <section id="fees" class="card">
+      <h2>Registration Fee</h2>
+      <p>The registration fee includes conference kit, abstract book, tea/snacks and lunch.</p>
+      <table class="fee-table">
+        <thead>
+          <tr><th>Category</th><th>Early Bird (until 20 Nov 2025)</th><th>On Spot (28 Nov 2025)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Faculty / Scientists</td><td>₹2,000</td><td>₹2,500</td></tr>
+          <tr><td>Research Scholars</td><td>₹1,500</td><td>₹2,000</td></tr>
+          <tr><td>M.Sc. Students</td><td>₹500</td><td>₹750</td></tr>
+          <tr><td>Industry</td><td>₹3,000</td><td>₹4,000</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:14px; text-align:center;">
+        <strong>Bank Details</strong>
+        <p style="margin:6px 0 0;">Account No: <strong>5859558440</strong> | A/C Name: <strong>National Conference Mathematics</strong></p>
+        <p style="margin:6px 0 0;">Bank: Central Bank of India, Branch: Bodh Gaya, M.U. Campus | IFSC: <strong>CBIN0280045</strong></p>
+      
+        <!-- QR Code -->
+        <div class="qr-code-box">
+          <img src="qr.jpg" alt="Conference Payment QR Code">
+          <p>Scan to Pay</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- COMMITTEE -->
+    <section id="committee" class="card">
+      <h2>Organizing Committee</h2>
+      <p><strong>Chief Patron:</strong> </p>
+        <ul class="committee-list">
+          <li>Prof. S. P. Shahi, Hon’ble Vice-Chancellor, M.U., Bodh Gaya</li>
+        </ul>
+        
+      <p><strong>Patron:</strong> </p>
+        <ul class="committee-list">
+          <li>Prof. B. R. K. Sinha, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
+          <li>Dr. Binod Kumar Manglam, Registrar, M.U., Bodh Gaya</li>
+        </ul>
+      <p><strong>Convener:</strong> </p>
+          <ul class="committee-list">
+            <li>Dr. Sunil Suman, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
+          </ul>
+        
+        
+      <p><strong>Co-Convener:</strong> </p>
+          <ul class="committee-list">
+            <li>Dr. S. K. Tiwari, Associate Professor, Dept of Mathematics, M.U., Bodh Gaya</li>
+          </ul>
+
+      <p><strong>Organizing Secretaries:</strong> </p>
+            <ul class="committee-list">
+              <li>Dr. Amar Kishor, Department of Mathematics, M.U., Bodh Gaya</li>
+              <li>Dr. Kumar Vishal, Department of Mathematics, M.U., Bodh Gaya</li>
+            </ul>
+      <p><strong>Treasurer:</strong> </p>
+              <ul class="committee-list">
+                <li>Dr. Pintu Samanta, Department of Mathematics, M.U., Bodh Gaya</li>
+              </ul>
+      <p><strong>Members:</strong> </p>
+              <ul class="committee-list">
+                <li>Dr. Prayag Prasad, Dept of Mathematics, M.U., Bodh Gaya</li>
+                <li>Dr. Manoj Kumar Singh, Dept of Mathematics, M.U., Bodh Gaya</li>
+                <li>Dr. Nitisha Bharti, Dept of Mathematics, M.U., Bodh Gaya </li>
+                <li>Dr. Dharmendra Kumar, Department of CS & IT, M.U., Bodh Gaya </li>
+                <li>Mr. Aditya Bharti, Department of CS & IT, M.U., Bodh Gaya</li>
+              </ul>
+              
+
+      <p><strong>Tentative List of Resource Persons:</strong> </p>
+              <ul>
+                <li>Prof. Nikhil Ranjan Pal, ISI Kolkata</li>
+                <li>Prof. Subir Das, IIT (BHU), Varanasi</li>
+                <li>Dr. Debasis Das, IIT, Jodhpur</li>
+                <li>Prof. Jagdish Chand Bansal, South Asian University, New Delhi </li>
+                <li>Dr. Sanjeev A. Sahu, IIT(ISM) Dhanbad</li>
+                <li>Dr. Jai Prakash, Banaras Hindu University, Varanasi </li>
+                <li>Dr. Rishav Singh, IIT Patna</li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+              </ul>
+
+      <h3 style="margin-top:14px;">Tentative Resource Persons</h3>
+      <p>Prof. Nikhil Ranjan Pal (ISI Kolkata), Prof. Subir Das (IIT BHU), Dr. Debasis Das (IIT Jodhpur), Prof. Jagdish Chand Bansal (South Asian University), and others.</p>
+    </section>
+
+    <!-- HOW TO REACH -->
+    <section id="reach" class="card">
+      <h2>How to Reach</h2>
+      <p>Magadh University campus is located on Gaya–Dobhi Road — approximately 17 km from Gaya Railway Station and 7 km from Gaya Airport. Gaya Railway Station lies on the main line of Eastern Railway. The campus is ~13 km from Gaya International Airport and ~98 km from Patna Airport.</p>
+    </section>
+
+    <!-- REGISTRATION FORM (STATIC) -->
+    <section id="registration" class="card">
+      <h2>Registration (Static Form)</h2>
+      <p>Please fill the form below and click <strong>Download & Submit</strong> to save your registration locally and follow the payment instructions above. (This form is static — for live registrations, use the Google Form link from the hero.)</p>
+
+      <form class="reg-form" onsubmit="handleLocalRegistration(event)">
+        <input name="name" placeholder="Full Name" required />
+        <input name="email" placeholder="Email" type="email" required />
+        <input name="affiliation" placeholder="Affiliation / Institution" required />
+        <select name="category" required>
+          <option value="">Select Category</option>
+          <option>Faculty/Scientists</option>
+          <option>Research Scholars</option>
+          <option>M.Sc. Students</option>
+          <option>Industry</option>
+        </select>
+        <textarea name="abstract" rows="4" placeholder="Abstract (optional, max 300 words)"></textarea>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button type="submit">Download & Save Registration (Local)</button>
+          <a class="btn" href="https://tinyurl.com/RTMCS-2025" target="_blank" style="background:var(--mu-gold); color:var(--mu-blue); text-decoration:none; display:inline-flex; align-items:center; padding:10px 14px; border-radius:8px; font-weight:700;">Open Online Registration</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p><strong>Organizing Secretaries:</strong> Dr. Amar Kishor (8789414148), Dr. Kumar Vishal (8385095319)</p>
+      <p><strong>Treasurer:</strong> Dr. Pintu Samanta (9543923344)</p>
+      <p><strong>Email:</strong> <a href="mailto:rtmcs2025@gmail.com">rtmcs2025@gmail.com</a></p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <img src="logo.png" alt="logo" style="height:56px; display:block; margin-bottom:10px;">
+        <div class="copyright">© 2025 RTMCS - Magadh University</div>
+      </div>
+      <div class="footer-links">
+        <strong style="display:block; margin-bottom:8px;">Quick Links</strong>
+        <a href="#about">About</a>
+        <a href="#topics">Topics</a>
+        <a href="#dates">Important Dates</a>
+        <a href="#registration">Registration</a>
+      </div>
+      <div>
+        <strong style="display:block; margin-bottom:8px;">Contact</strong>
+        <div>Department of Mathematics, Magadh University</div>
+        <div style="margin-top:8px;"><a href="mailto:rtmcs2025@gmail.com" style="color:#fff; text-decoration:underline;">rtmcs2025@gmail.com</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS: Smooth scroll, countdown, animations, local reg -->
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('.menu a, .footer-links a').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const href = a.getAttribute('href');
+        if(href && href.startsWith('#')){
+          document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});
+        } else {
+          window.location = href;
+        }
+      });
+    });
+
+    // Countdown to Nov 28, 2025 (start of conference)
+    (function countdown(){
+      function pad(n){ return n<10? '0'+n : n; }
+      const target = new Date('2025-11-28T00:00:00').getTime();
+      function tick(){
+        const now = Date.now();
+        let diff = Math.max(0, target - now);
+        const days = Math.floor(diff / (1000*60*60*24));
+        diff -= days*(1000*60*60*24);
+        const hrs = Math.floor(diff / (1000*60*60));
+        diff -= hrs*(1000*60*60);
+        const mins = Math.floor(diff / (1000*60));
+        diff -= mins*(1000*60);
+        const secs = Math.floor(diff/1000);
+        document.getElementById('cd-days').textContent = days;
+        document.getElementById('cd-hours').textContent = pad(hrs);
+        document.getElementById('cd-mins').textContent = pad(mins);
+        document.getElementById('cd-secs').textContent = pad(secs);
+      }
+      tick(); window.setInterval(tick, 1000);
+    })();
+
+    // Reveal on scroll (fade in)
+    const sections = document.querySelectorAll('main section');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){ ent.target.classList.add('visible'); }
+      });
+    }, {threshold:0.12});
+    sections.forEach(s=>obs.observe(s));
+
+    // Local registration: download filled form as text file (static)
+    function handleLocalRegistration(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        affiliation: form.affiliation.value.trim(),
+        category: form.category.value,
+        abstract: form.abstract.value.trim(),
+        timestamp: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = (data.name ? data.name.replace(/\s+/g,'_') : 'registration') + '_RTMCS2025.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      alert('Registration saved locally as a JSON file. For official submission, please complete the Online Registration link.');
+      form.reset();
+    }
+
+    // Mobile: show a simple menu toggle if needed (small screens)
+    // (PSIT style keeps menu minimal so no heavy menu implemented)
+  </script>
+</body>
+</html>
