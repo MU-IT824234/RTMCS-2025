@@ -45,7 +45,14 @@
       padding:10px 18px;
     }
     .brand { display:flex; align-items:center; gap:12px; }
-    .brand img{ height:112px; width:auto; object-fit: contain; margin-right: 2px; } 
+    
+    .brand img {
+        height: 70px;         /* fixed height */
+        width: 70px;          /* fixed width */
+        object-fit: contain;  /* keeps proportions inside the box */
+        margin-right: 6px;
+      }
+
     .brand h4{ margin:0; color:var(--mu-blue); font-size:16px; letter-spacing:0.2px; }
     .menu { display:flex; gap:16px; align-items:center; }
     .menu a{
@@ -270,11 +277,6 @@
     .t-item{ background:#fff; padding:12px; border-radius:10px; min-width:170px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
     .t-item .date{ font-weight:800; color:var(--mu-blue); }
 
-    /* Registration form (static) */
-    .reg-form{ display:flex; flex-direction:column; gap:12px; margin-top:12px; }
-    .reg-form input, .reg-form textarea, .reg-form select{ padding:12px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); width:100%; }
-    .reg-form button{ width:220px; padding:12px; border-radius:8px; border:none; cursor:pointer; background:var(--mu-blue); color:#fff; font-weight:800; }
-
     /* Footer */
     footer{ background:var(--mu-blue); color:white; padding:26px 18px; margin-top:24px; }
     .footer-inner{ max-width:var(--max-width); margin:0 auto; display:flex; gap:20px; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; }
@@ -342,7 +344,7 @@
         </div>
   
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="Brochure_final 8.pdf" download>Download Brochure (PDF)</a>
+          <a class="btn btn-gold" href="Brochure_final.pdf" download>Download Brochure (PDF)</a>
           <a class="btn btn-white" href="https://tinyurl.com/RTMCS-2025" target="_blank" rel="noopener">Register Now</a>
         </div>
       </div>
