@@ -45,7 +45,7 @@
       padding:10px 18px;
     }
     .brand { display:flex; align-items:center; gap:12px; }
-    .brand img{ height:52px; width:auto; display:block; }
+    .brand img{ height:112px; width:auto; object-fit: contain; margin-right: 2px; } 
     .brand h4{ margin:0; color:var(--mu-blue); font-size:16px; letter-spacing:0.2px; }
     .menu { display:flex; gap:16px; align-items:center; }
     .menu a{
@@ -54,10 +54,18 @@
     }
     .menu a:hover{ background:rgba(0,0,0,0.04); }
 
+
+    .left-logos img {
+      height: 70px;   /* match size */
+      width: auto;    /* keep aspect ratio */
+      object-fit: contain;
+      margin-right: 10px; /* small gap between them */
+      vertical-align: middle;
+    }
     /* HERO */
     .hero{
       position:relative;
-      background-image: url('hero-bg.jpg');
+      background-image: url('hero.jpg');
       background-size:cover;
       background-position:center;
       color:white;
@@ -82,7 +90,7 @@
     }
     .hero-left{ text-align:left; flex:1; z-index:2; }
     .logo-wrap{ text-align:center; margin-bottom:18px; }
-    .logo-wrap img{ max-height:120px; display:inline-block; }
+    .logo-wrap img{ max-height:150px;  }
 
     .title{
       font-size:28px; font-weight:700; margin:6px 0 6px; color:#fff;
@@ -127,19 +135,20 @@
       transform: rotateY(6deg) rotateX(3deg) scale(1.04);
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
     }
-    .quick-info h3 {
-      margin-top: 0;
-      font-size: 22px;
-      color: #fff;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    }
-    .quick-info p {
-      margin: 10px 0;
-      font-size: 16px;
-      font-weight: 600;
-      color: #fdfdfd;
-    }
+    .quick-info h3{
+        margin-top: 0;
+        font-size: 22px;
+        color: #ffffff; /* pure white */
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      }
+
+    .quick-info p{
+        margin: 10px 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff; /* pure white */
+      }
 
     /* qr code */
     .qr-code-box {
@@ -163,6 +172,69 @@
   font-size: 14px;
   font-weight: 600;
   color: var(--mu-blue);
+}
+
+
+/* committiee */
+
+  /* Committee Header Bar */
+.committee-header {
+  background: #2f3e4e;  /* dark navy like screenshot */
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Committee Cards */
+.committee-block {
+  margin-bottom: 25px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.committee-block:hover {
+  transform: translateY(-4px);
+}
+.committee-block h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--mu-blue);
+  border-bottom: 2px solid var(--mu-gold);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+.committee-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.committee-list li {
+  font-size: 16px;
+  margin: 8px 0;
+  padding-left: 18px;
+  position: relative;
+}
+.committee-list li::before {
+  content: "•";
+  color: var(--mu-gold);
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.committee-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 
@@ -230,9 +302,10 @@
   <!-- NAV -->
   <div class="nav" aria-hidden="false">
     <div class="nav-inner">
-      <div class="brand">
-        <img src="logo.png  " alt="Magadh University Logo">
-        <h4>RTMCS-2025 • Magadh University</h4>
+      <div class="brand ">
+        <img src="logo2.png" alt="Magadh University Logo">
+        <img src="logo.png" alt="Magadh University Logo">
+        <h4> &nbsp; &nbsp; &nbsp; RTMCS-2025 <br> • Magadh University</h4>
       </div>
       <div class="menu" id="menu">
         <a href="#about">About</a>
@@ -241,57 +314,17 @@
         <a href="#registration">Registration</a>
         <a href="#contact">Contact</a>
       </div>
+      <div class="brand" style="align-content: normal; ">
+        <img src="logo3.jpg" alt="Magadh University Logo">
+      </div>
     </div>
   </div>
-
-  <!-- HERO -->
-  <!-- <header class="hero" role="banner">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="logo-wrap">
-          <img src="logo.png" alt="Conference Logo">
-        </div>
-        <div class="title">National Conference on “Recent Trends in Mathematical and Computational Sciences” (RTMCS-2025)</div>
-        <div class="subtitle">November 28–29, 2025 • Magadh University, Bodh Gaya</div>
-
-        <div class="hero-meta">
-          <div class="pill">Organized by P.G. Dept. of Mathematics & Dept. of CS & IT</div>
-          <div class="pill">Sponsored by Soft Computing Research Society (SCRS)</div>
-        </div>
-
-        <div class="countdown" aria-hidden="false" id="countdown">
-          <div class="unit"><span class="num" id="cd-days">--</span><span class="lab">Days</span></div>
-          <div class="unit"><span class="num" id="cd-hours">--</span><span class="lab">Hours</span></div>
-          <div class="unit"><span class="num" id="cd-mins">--</span><span class="lab">Minutes</span></div>
-          <div class="unit"><span class="num" id="cd-secs">--</span><span class="lab">Seconds</span></div>
-        </div>
-
-        <div class="hero-ctas">
-          <a class="btn btn-gold" href="Brochure_final.pdf" download>Download Brochure (PDF)</a>
-          <a class="btn btn-white" href="https://tinyurl.com/RTMCS-2025" target="_blank" rel="noopener">Register Now</a>
-        </div>
-      </div>
-
-      <div style="flex:0 0 320px; text-align:center;">
-        <div class="card" style="color:var(--mu-blue); border-radius:12px;">
-          <div class="quick-info">
-            <h3>Quick Info</h3>
-            <p>Registration Ends: <strong>20 Nov 2025</strong></p>
-            <p>Spot Registration: <strong>28 Nov 2025</strong></p>
-            <p>Venue: <strong>Magadh University, Bodh Gaya</strong></p>
-          </div>
-          
-      </div>
-    </div>
-  </header> -->
 
   <header class="hero" role="banner">
     <div class="hero-inner">
       <div class="hero-left">
         <div class="logo-wrap">
-          <img src="logo2.png" alt="Conference Logo">
-          <img src="logo.png" alt="Conference Logo">
-          <img src="logo3.jpg" alt="Conference Logo">
+          
         </div>
         <div class="title">National Conference on “Recent Trends in Mathematical and Computational Sciences” (RTMCS-2025)</div>
         <div class="subtitle">November 28–29, 2025 • Magadh University, Bodh Gaya</div>
@@ -331,7 +364,7 @@
 
     <!-- ABOUT / UNIVERSITY / DEPARTMENT / CITY -->
     <section id="about" class="card">
-      <h3 style="margin:0 0 8px;">About the University</h3>
+      <h3 style="margin:0 0 8px;" class="committee-header">About the University</h3>
        <p style="text-align: justify;">Magadh University, Bodh Gaya, was founded on March 1, 1962, through the vision and dedication of scholars and educationists from the Magadh region. Its first Vice-Chancellor was Prof. (Dr.) K. K. Dutta, an eminent historian and academic of international standing. The establishment of the University’s campus became possible due to the generous donation of land by Shri Satanand Giri, the revered Mahant of Bodh Gaya Math, at the request of the then Education Minister. On August 20, 1964, the foundation stone of the present campus was laid by Dr. Sarvepalli Radhakrishnan, the then President of India.</p>
 
         <p style="text-align: justify;">Today, Magadh University is recognized as one of Bihar’s leading institutions of higher education. It offers postgraduate programs in 22 disciplines across the faculties of Science, Social Science, Humanities, and Commerce. Alongside traditional courses, the University provides a diverse range of vocational and professional programs in fields such as Education, Physiotherapy, Information Technology, Management, Environmental Science, Library Science, and Biotechnology.</p>
@@ -342,7 +375,7 @@
       <div class="cols" style="margin-top:18px;">
         <div class="col">
           <p class="card">
-            <h3 style="margin:0 0 8px;">About the Department</h3>
+            <h3 style="margin:0 0 8px;" class="committee-header">About the Department</h3>
             <p style="text-align: justify;">TThe Postgraduate Department of Mathematics at Magadh University was established in 1962. In its formative years, classes were conducted in a rented building, as the University had not yet developed its own infrastructure. The Department’s journey began with the appointment of Dr. Shyam Sundar Prasad, who joined after being transferred from Nalanda College, Bihar Sharif. He was soon joined by eminent academicians including Dr. R. Shukla (Professor & Head), Dr. Shaligram Singh (Reader), Dr. Ziaul Hasan (Lecturer), and Dr. P. Tiwari (Lecturer).</p>
 
             <p style="text-align: justify;"></p> With the relocation of the University to its permanent campus at Bodh Gaya on December 15, 1969, the Department of Mathematics also moved into a newly constructed facility. The spacious and well-equipped environment provided a strong foundation for advancing both teaching and research activities.</p>
@@ -356,16 +389,16 @@
         </div>
              
         <div class="col">
-          <div class="card">
-            <h3 style="margin:0 0 8px;">About the City</h3>
+          <div >
+            <h3 style="margin:0 0 8px;" class="committee-header">About the City</h3>
             <p>Gaya (Gayaji) is an ancient cultural centre drawing pilgrims and scholars worldwide. Nearby Bodh Gaya is the place of Lord Buddha's enlightenment, making the region globally significant for pilgrims and researchers alike.</p>
           </div>
         </div>
       </div>
 
       <div style="margin-top:16px;">
-        <div class="card">
-          <h2>About the Conference</h2>
+        <div >
+          <h2 class="committee-header">About the Conference</h2>
           <p>The conference aims to serve as a dynamic platform for academicians, researchers and industry experts to share, exchange, and disseminate their knowledge on recent developments and emerging trends in Pure Mathematics, Applied Mathematics, Computer Science, Physics, and Chemistry. A special focus is placed on motivating and engaging young researchers and students.</p>  
         </div>
       </div>
@@ -373,7 +406,7 @@
 
     <!-- TOPICS -->
     <section id="topics" class="card">
-      <h2>Conference Topics</h2>
+      <h2 class="committee-header">Conference Topics</h2>
       <div class="topics-grid" style="margin-top:12px;">
         <div class="topic">Algebra</div>
         <div class="topic">Analysis</div>
@@ -400,7 +433,7 @@
 
     <!-- CALL FOR ABSTRACTS -->
     <section id="abstracts" class="card">
-      <h2>Call for Abstracts</h2>
+      <h2 class="committee-header">Call for Abstracts</h2>
       <p>Abstracts (original research) are invited for presentation. Abstract should be in English, limited to <strong>300 words</strong> with title, affiliation and email id. Submit via email to: <a href="mailto:rtmcs2025@gmail.com">rtmcs2025@gmail.com</a>.</p>
       <p><strong>Text Format:</strong> Microsoft Word</p>
       <p><strong>Title:</strong> Limited to 250 characters; use initial caps (no ALL CAPS).</p>
@@ -409,7 +442,7 @@
 
     <!-- IMPORTANT DATES -->
     <section id="dates" class="card">
-      <h2>Important Dates</h2>
+      <h2 class="committee-header">Important Dates</h2>
       <div class="timeline">
         <div class="t-item">
           <div class="date">10 Sep 2025</div>
@@ -428,7 +461,7 @@
 
     <!-- FEE TABLE -->
     <section id="fees" class="card">
-      <h2>Registration Fee</h2>
+      <h2 class="committee-header">Registration Fee</h2>
       <p>The registration fee includes conference kit, abstract book, tea/snacks and lunch.</p>
       <table class="fee-table">
         <thead>
@@ -456,7 +489,7 @@
       
     </section>
 
-    <!-- COMMITTEE -->
+    <!-- COMMITTEE --> <!--
     <section id="committee" class="card">
       <h2>Organizing Committee</h2>
       <p><strong>Chief Patron:</strong> </p>
@@ -470,13 +503,13 @@
           <li>Dr. Binod Kumar Manglam, Registrar, M.U., Bodh Gaya</li>
         </ul>
       <p><strong>Convener:</strong> </p>
-          <ul class="committee-list">
+        <ul class="committee-list">
             <li>Dr. Sunil Suman, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
           </ul>
         
         
       <p><strong>Co-Convener:</strong> </p>
-          <ul class="committee-list">
+        <ul class="committee-list">
             <li>Dr. S. K. Tiwari, Associate Professor, Dept of Mathematics, M.U., Bodh Gaya</li>
           </ul>
 
@@ -520,15 +553,177 @@
 
       <h3 style="margin-top:14px;">Tentative Resource Persons</h3>
       <p>Prof. Nikhil Ranjan Pal (ISI Kolkata), Prof. Subir Das (IIT BHU), Dr. Debasis Das (IIT Jodhpur), Prof. Jagdish Chand Bansal (South Asian University), and others.</p>
+    </section> -->
+
+    <section id="committee" class="section">
+      <div class="container">
+        
+        <!-- Committee Header Bar -->
+        <div class="committee-header">Committee</div>
+    
+        <!-- Chief Patrons -->
+        <div class="committee-block">
+          <h3>Chief Patrons</h3>
+          <ul class="committee-list">
+            <li>Prof. S. P. Shahi, Hon’ble Vice-Chancellor, M.U., Bodh Gaya</li>
+          </ul>
+        </div>
+
+        <!-- Patron-->
+
+        <div class="committee-block">
+          <h3>Patrons</h3>
+          <ul class="committee-list">
+            <li>Prof. B. R. K. Sinha, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
+            <li>Dr. Binod Kumar Manglam, Registrar, M.U., Bodh Gaya</li>
+          </ul>
+        </div>
+
+        <!--  Conference Mentor-->
+        <div class="committee-block">
+          <h3>Conference Mentor</h3>
+          <ul class="committee-list">
+            <li> Dr. M. K. Singh, Professor, Department of Mathematics, M.U., Bodh Gaya
+          </ul>
+        </div>
+
+        <!--   Convener  -->
+        <div class="committee-block">
+          <h3>Convener</h3>
+          <ul class="committee-list">
+            <li>Dr. Sunil Suman, Head/Incharge, Department of Mathematics, M.U., Bodh Gaya</li>
+          </ul>
+        </div>
+
+        <!--  CO-COnvener -->
+        <div class="committee-block">
+          <h3>Co-Convener</h3>
+          <ul class="committee-list">
+            <li>Dr. S. K. Tiwari, Associate Professor, Dept of Mathematics, M.U., Bodh Gaya</li>
+          </ul>
+        </div>
+
+        <!--   Organizing Secretaries -->
+        <div class="committee-block">
+          <h3>Chief Patrons</h3>
+          <ul class="committee-list">
+            <li>Dr. Amar Kishor, Department of Mathematics, M.U., Bodh Gaya</li>
+            <li>Dr. Kumar Vishal, Department of Mathematics, M.U., Bodh Gaya</li>
+          </ul>
+        </div>
+
+        <!-- Treasurer -->
+
+        <div class="committee-block">
+          <h3>Treasurer</h3>
+          <ul class="committee-list">
+            <li>Dr. Pintu Samanta, Department of Mathematics, M.U., Bodh Gaya</li>
+          </ul>
+        </div>
+
+        <!-- Members -->
+
+        <div class="committee-block">
+          <h3>Members</h3>
+          <ul class="committee-list">
+                 <li>Dr. Prayag Prasad, Dept of Mathematics, M.U., Bodh Gaya</li>
+                <li>Dr. Manoj Kumar Singh, Dept of Mathematics, M.U., Bodh Gaya</li>
+                <li>Dr. Nitisha Bharti, Dept of Mathematics, M.U., Bodh Gaya </li>
+                <li>Dr. Dharmendra Kumar, Department of CS & IT, M.U., Bodh Gaya </li>
+                <li>Mr. Aditya Bharti, Department of CS & IT, M.U., Bodh Gaya</li>          </ul>
+        </div>
+
+        <!--  Tentative list -->
+        <div class="committee-block">
+          <h3>Tentative List</h3>
+          <ul class="committee-list">
+              <li>Prof. Nikhil Ranjan Pal, ISI Kolkata</li>
+              <li>Prof. Subir Das, IIT (BHU), Varanasi </li>
+              <li>Dr. Debasis Das, IIT, Jodhpur </li>
+              <li>Dr. Sanjeev A. Sahu, IIT(ISM) Dhanbad   </li>
+              <li>Dr. Jai Prakash, Banaras Hindu University, Varanasi </li>          </ul>
+        </div>
+
+        <!--   Advisory Committee -->
+
+        <div class="committee-block">
+          <h3>Advisory Committee </h3>
+          <div class="committee-columns">
+            <ul class="committee-list">
+              <li>Prof. Nikhil Ranjan Pal, ISI Kolkata</li>
+              <li>Prof. S.N.P. Yadav “Deen”, Dean Science, Magadh University, Bodh Gaya</li>
+              <li>Prof. Vijay Kumar Verma, Head, Dept. of Physics, M.U., Bodh Gaya</li>
+              <li>Prof. D. K. Keshari, Head, Dept. of Zoology, M.U., Bodh Gaya</li>
+              <li>Dr. Atul Kumar Srivastava, Head, Dept. of Chemistry, M.U., Bodh Gaya</li>
+              <li>Dr. Ravi Kumar Singh, Head, Dept. of Botany, M.U., Bodh Gaya</li>
+              <li>Prof. Ranjan Kumar, Aryabhatta College, Univ. of Delhi, New Delhi</li>
+              <li>Dr. Md. Jeyauddin, Jubail Industrial College, Jubail, Saudi Arabia</li>
+              <li>Dr. Mithilesh Kumar Chaube, IIIT-Naya Raipur</li>
+              <li>Prof. Mithilesh Singh, V.B.S. Purvanchal University, Jaunpur</li>
+              <li>Prof. Roushan Kumar, Central University of South Bihar, Gaya</li>
+              <li>Prof. Manoj Prakash Tripathi, U. P. College, Varanasi</li>
+              <li>Prof. K.B. Yadav, T.D. College, Jaunpur</li>
+              <li>Prof. Anirban Das, U.E.M. Kolkata</li>
+              <li>Dr. Amar Nath Chatterjee, K.L.S. College, Nawada</li>
+            </ul>
+            <ul class="committee-list">
+              <li>Dr. Amit Kumar, IIT(BHU), Varanasi</li>
+              <li>Dr. Navin Jha, U. P. College, Varanasi</li>
+              <li>Dr. P. K. Gupta, NIT Silichar</li>
+              <li>Dr. Anupam Priyadarshi, Banaras Hindu University, Varanasi</li>
+              <li>Dr. Rakesh Kumar, IIT Mandi</li>
+              <li>Dr. Varun Kumar, Mahatma Gandhi Kashi Vidyapeeth, Varanasi</li>
+              <li>Dr. Mayank Srivastava, P.G. College Ghazipur</li>
+              <li>Dr. Lokesh Kumar, T.M.B.U, Bhagalpur</li>
+              <li>Dr. Shree Nath Sharma, S.S. College, Jehanabad</li>
+              <li>Dr. N. P. Singh, S.N. Sinha College, Jehanabad</li>
+              <li>Dr. Md. Jawed Iqbal Khan, Mirza Ghalib College, Gaya</li>
+              <li>Dr. Shyam Sunder Pd. Singh, S. N. Sinha College, Warisaliganj</li>
+              <li>Dr. Manish Kr Singh, J. J. College, Gaya</li>
+              <li>Mr. Sudip Kumar, S. Sinha College, Aurangabad</li>
+              <li>Dr. Saurabh Kr. Agrawal, Bharati Vidyapeeth College of Engineering, New Delhi</li>
+            </ul>
+          </div>
+        </div>
+
+
+    
+    
+      </div>
     </section>
+    
 
     <!-- HOW TO REACH -->
     <section id="reach" class="card">
       <h2>How to Reach</h2>
       <p>Magadh University campus is located on Gaya–Dobhi Road — approximately 17 km from Gaya Railway Station and 7 km from Gaya Airport. Gaya Railway Station lies on the main line of Eastern Railway. The campus is ~13 km from Gaya International Airport and ~98 km from Patna Airport.</p>
+      <section id="location" class="location-section">
+        <h2>📍 Conference Location</h2>
+        <p>
+          Magadh University, Bodh Gaya – 824234, Bihar, India
+        </p>
+      
+        <!-- Google Maps Embed -->
+        <div style="width:100%; height:400px; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.7914691373694!2d84.9867!3d24.6979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d2d7f4f59d9fb%3A0x44f7f6e7dbb9f7dd!2sMagadh%20University!5e0!3m2!1sen!2sin!4v1694523700000!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+      
+    
+    
     </section>
 
-    <!-- REGISTRATION FORM (STATIC) -->
+    
+
+    <!-- REGISTRATION FORM (STATIC) 
     <section id="registration" class="card">
       <h2>Registration (Static Form)</h2>
       <p>Please fill the form below and click <strong>Download & Submit</strong> to save your registration locally and follow the payment instructions above. (This form is static — for live registrations, use the Google Form link from the hero.)</p>
@@ -550,7 +745,7 @@
           <a class="btn" href="https://tinyurl.com/RTMCS-2025" target="_blank" style="background:var(--mu-gold); color:var(--mu-blue); text-decoration:none; display:inline-flex; align-items:center; padding:10px 14px; border-radius:8px; font-weight:700;">Open Online Registration</a>
         </div>
       </form>
-    </section>
+    </section> -->
 
     <!-- CONTACT -->
     <section id="contact" class="card">
@@ -566,7 +761,7 @@
   <footer>
     <div class="footer-inner">
       <div>
-        <img src="logo.png" alt="logo" style="height:56px; display:block; margin-bottom:10px;">
+        <img src="logo.png" alt="logo" style="height:156px; align-items: center; margin-bottom:10px;">
         <div class="copyright">© 2025 RTMCS - Magadh University</div>
       </div>
       <div class="footer-links">
