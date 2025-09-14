@@ -297,6 +297,26 @@
       .countdown .unit{ min-width:58px; padding:8px; }
       .hero-inner{ padding:20px; }
     }
+
+
+
+    @media (max-width: 768px) {
+  .menu {
+    flex-direction: column;   /* Stack vertically */
+    width: 100%;
+    align-items: center;
+    gap: 10px;                /* Space between links */
+    margin-top: 10px;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;              /* Make links stretch full width */
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Optional: divider */
+  }
+}
     
     /* ...existing code... */
 
