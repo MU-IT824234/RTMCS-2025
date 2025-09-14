@@ -1,3 +1,4 @@
 # RTMCS-2025
-Conference website
-Author By P.G Department of Mathematics and INformation Technology
+Conference website <br>
+Author By :<br> P.G Department of Mathematics <br>
+P.G Department OF INformation Technology ANd CS
