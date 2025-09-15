@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,37 +43,37 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:10px 18px;
+      padding:10px 0px;
     }
-    .brand { display:flex; align-items:center; gap:12px; }
+    .brand { display:flex; align-items:center; }
     
     .brand img {
-        height: 110px;         /* fixed height */
-        width: 110px;          /* fixed width */
+        height: 130px;         /* fixed height */
+        width: 140px;          /* fixed width */
         object-fit: contain;  /* keeps proportions inside the box */
-        margin-right: 6px;
+        /*margin-right: 1px; */
       }
 
-    .brand h4{ margin:0; color:var(--mu-blue); font-size:16px; letter-spacing:0.2px; }
+    .brand h4{ margin:0; color:var(white); font-size:18px; /*letter-spacing:2px; */ }
     .menu { display:flex; gap:16px; align-items:center; }
     .menu a{
-      color:var(--mu-blue); text-decoration:none; font-weight:600; font-size:14px;
+      color:var(white); text-decoration:none; font-weight:600; font-size:16px;
       padding:8px 10px; border-radius:8px;
     }
     .menu a:hover{ background:rgba(0,0,0,0.04); }
 
 
     .left-logos img {
-      height: 110px;   /* match size */
-      width: 110px;    /* keep aspect ratio */
+      height: 110px;   
+      width: 150px;    
       object-fit: contain;
-      margin-right: 10px; /* small gap between them */
-      vertical-align: middle;
+      margin-right: 0px; 
+      vertical-align: middle; 
     }
     /* HERO */
     .hero{
       position:relative;
-      background-image: url('hero.jpg');
+      background-image: url('hero-bg.jpg');
       background-size:cover;
       background-position:center;
       color:white;
@@ -97,10 +98,10 @@
     }
     .hero-left{ text-align:left; flex:1; z-index:2; }
     .logo-wrap{ text-align:center; margin-bottom:18px; }
-    .logo-wrap img{ max-height:150px;  }
+    .logo-wrap img{ max-height:150px; }
 
     .title{
-      font-size:28px; font-weight:700; margin:6px 0 6px; color:#fff;
+      font-size:40px; font-weight:700; margin:6px 0 6px; color:#fff;
     }
     .subtitle{ font-size:16px; margin:0 0 12px; opacity:0.95; }
     .hero-meta{ display:flex; gap:12px; align-items:center; margin:12px 0 18px; flex-wrap:wrap; }
@@ -111,7 +112,27 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
     .btn-gold{ background:var(--mu-gold); color:var(--mu-blue); }
-    .btn-white{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.18); }
+    /*.btn-white{ background:transparent; color:#fff; border: 10px solid white ; border-color: white; } */
+
+    /* new editing to button white*/
+
+    .btn-white {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff; /* thinner border looks better */
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
 
     /* Countdown */
     .countdown { display:flex; gap:10px; margin-top:12px; }
@@ -125,7 +146,7 @@
     .wrap{ max-width:var(--max-width); margin:0 auto; padding:32px 18px; }
 
     /*QUICK INFO */
-    .quick-info {
+    /* .quick-info {
       position: relative;
       background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(218, 165, 32, 0.85)),
                   url('hero-bg.jpg') center/cover no-repeat;
@@ -149,37 +170,37 @@
         letter-spacing: 0.5px;
         text-shadow: 0 2px 6px rgba(0,0,0,0.6);
       }
-
+   /*
     .quick-info p{
         margin: 10px 0;
         font-size: 16px;
         font-weight: 600;
         color: #ffffff; /* pure white */
-      }
+      }  */
 
     /* qr code */
     .qr-code-box {
-  margin-top: 16px;
-  display: inline-block;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(0, 51, 102, 0.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-.qr-code-box:hover {
-  transform: scale(1.05);
-}
-.qr-code-box img {
-  max-width: 150px;
-  border-radius: 8px;
-}
-.qr-code-box p {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--mu-blue);
-}
+        margin-top: 16px;
+        display: inline-block;
+        padding: 12px;
+        border-radius: 12px;
+        background: rgba(0, 51, 102, 0.05);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        }
+    .qr-code-box:hover {
+    transform: scale(1.05);
+    }
+    .qr-code-box img {
+    max-width: 150px;
+    border-radius: 8px;
+    }
+    .qr-code-box p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mu-blue);
+    }
 
 
 /* committiee */
@@ -244,6 +265,84 @@
   gap: 20px;
 }
 
+/* keynote speaker  */
+/* Section Styling */
+.speakers {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  background: var(--mu-blue); /* your site theme color */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+/* Grid Layout */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Speaker Card */
+.speaker-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  max-width: 250px;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Circular Image */
+.speaker-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--mu-blue);
+}
+
+.speaker-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--mu-blue);
+}
+
+.speaker-card p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.4;
+}
+
+
+
+
+/* hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mu-blue);
+}
+
+
+
+
 
 
 
@@ -292,15 +391,14 @@
       .hero-left{ width:100%;}
       .logo-wrap img{ max-height:100px;}
     }
-    @media (max-width:520px){
+   /* @media (max-width:520px){
       .title{ font-size:20px; }
       .countdown .unit{ min-width:58px; padding:8px; }
       .hero-inner{ padding:20px; }
-    }
+    } */
 
-
-
-    @media (max-width: 768px) {
+   /* Mobile View Navbar */
+@media (max-width: 520px) {
   .menu {
     flex-direction: column;   /* Stack vertically */
     width: 100%;
@@ -316,7 +414,40 @@
     padding: 10px;
     border-bottom: 1px solid #ddd; /* Optional: divider */
   }
+
+
+  .speakers-grid {
+    grid-template-columns: 1fr;   /* Only 1 column */
+    gap: 20px;                    /* Smaller gap for mobile */
+  }
+
+  .speaker-card {
+    max-width: 100%;              /* Take full width */
+    width: 90%;                   /* Center nicely */
+  }
+
+  .speaker-card img {
+    width: 100px;
+    height: 100px;                /* Slightly smaller image */
+  }
+
+  .speaker-card h3 {
+    font-size: 15px;
+  }
+
+  .speaker-card p {
+    font-size: 13px;
+  }
 }
+
+.underline {
+        display: inline-block;
+        border-bottom: 3px solid red; /* red underline */
+        padding-bottom: 4px; /* gap between text and underline */
+    }
+
+
+
     
     /* ...existing code... */
 
@@ -434,11 +565,17 @@
   <div class="nav" aria-hidden="false">
     <div class="nav-inner">
       <div class="brand ">
-        <img src="logo2.png" alt="Magadh University Logo">
+        <!-- <img src="logo2.png" alt="Magadh University Logo"> -->
         <img src="logo.png" alt="Magadh University Logo">
-        <h4> &nbsp; &nbsp; &nbsp; RTMCS-2025 <br> • Magadh University</h4>
+        <h4> &nbsp; &nbsp; &nbsp; RTMCS-2025 </h4>
       </div>
+
+       <!-- Hamburger (hidden on desktop) -->
+        <button class="hamburger" aria-label="Toggle menu">
+            ☰
+        </button>
       <div class="menu" id="menu">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
         <a href="#about">About</a>
         <a href="#topics">Topics</a>
         <a href="#dates">Dates</a>
@@ -446,7 +583,7 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="brand" style="align-content: normal; ">
-        <img src="logo3.jpg" alt="Magadh University Logo">
+        <a href="https://magadhuniversity.ac.in/"><img src="logo3.jpg" alt="Magadh University Logo"></a>
       </div>
     </div>
   </div>
@@ -454,38 +591,57 @@
   <header class="hero" role="banner">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="logo-wrap">
-          
-        </div>
-        <div class="title">National Conference on “Recent Trends in Mathematical and Computational Sciences” (RTMCS-2025)</div>
-        <div class="subtitle">November 28–29, 2025 • Magadh University, Bodh Gaya</div>
+
+        
+      
+
+          <div class="title">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; “Welcome To” 
+                  <br>      &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Conference on <br> &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: yellow;"> “Recent Trends in Mathematical and Computational Sciences” </span>
+            <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    (RTMCS-2025)
+          </div>
+          <div class="subtitle">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;November 28–29, 2025 
+          </div>
   
         <div class="hero-meta">
-          <div class="pill">Organized by P.G. Dept. of Mathematics & Dept. of CS & IT</div>
-          <div class="pill">Sponsored by Soft Computing Research Society (SCRS)</div>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <div class="pill"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; 
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; Organized by <br> 
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P.G. Dept. of Mathematics & Dept. of CS & IT • Magadh University, Bodh Gaya  
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          &nbsp; &nbsp; 
+          <div class="pill">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+             &nbsp;  Sponsored by <br> &nbsp; &nbsp;   Computing Research Society (SCRS) &nbsp; &nbsp; &nbsp;  </div>
         </div>
   
-        <div class="countdown" aria-hidden="false" id="countdown">
-          <div class="unit"><span class="num" id="cd-days">--</span><span class="lab">Days</span></div>
+      <div class="countdown" aria-hidden="false" id="countdown">
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+         <div class="unit"><span class="num" id="cd-days">--</span><span class="lab">Days</span></div>
           <div class="unit"><span class="num" id="cd-hours">--</span><span class="lab">Hours</span></div>
           <div class="unit"><span class="num" id="cd-mins">--</span><span class="lab">Minutes</span></div>
           <div class="unit"><span class="num" id="cd-secs">--</span><span class="lab">Seconds</span></div>
         </div>
   
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="Brochure_final.pdf" download>Download Brochure (PDF)</a>
-          <a class="btn btn-white" href="https://tinyurl.com/RTMCS-2025" target="_blank" rel="noopener">Register Now</a>
+          &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; 
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; <a class="btn btn-white" href="Brochure_final.pdf" download>Brochure </a>
+          <a class="btn btn-gold" href="https://tinyurl.com/RTMCS-2025" target="_blank" rel="noopener">Register Now</a>
         </div>
       </div>
   
-      <div style="flex:0 0 320px; text-align:center;">
-        <div class="quick-info">
-          <h3>Quick Info</h3>
-          <p>Registration Ends: <strong>20 Nov 2025</strong></p>
-          <p>Spot Registration: <strong>28 Nov 2025</strong></p>
-          <p>Venue: <strong>Magadh University, Bodh Gaya</strong></p>
-        </div>
-      </div>
     </div>
   </header>
   
@@ -498,16 +654,16 @@
       <h3 style="margin:0 0 8px;" class="committee-header">About the University</h3>
        <p style="text-align: justify;">Magadh University, Bodh Gaya, was founded on March 1, 1962, through the vision and dedication of scholars and educationists from the Magadh region. Its first Vice-Chancellor was Prof. (Dr.) K. K. Dutta, an eminent historian and academic of international standing. The establishment of the University’s campus became possible due to the generous donation of land by Shri Satanand Giri, the revered Mahant of Bodh Gaya Math, at the request of the then Education Minister. On August 20, 1964, the foundation stone of the present campus was laid by Dr. Sarvepalli Radhakrishnan, the then President of India.</p>
 
-        <p style="text-align: justify;">Today, Magadh University is recognized as one of Bihar’s leading institutions of higher education. It offers postgraduate programs in 22 disciplines across the faculties of Science, Social Science, Humanities, and Commerce. Alongside traditional courses, the University provides a diverse range of vocational and professional programs in fields such as Education, Physiotherapy, Information Technology, Management, Environmental Science, Library Science, and Biotechnology.</p>
+        <p style="text-align: justify;">Today, Magadh University is recognized as one of Bihar’s leading institutions of higher education. It offers postgraduate programs in 22 disciplines across the faculties of Science, Social Science, Humanities, and Commerce. Alongside traditional courses, the University provides a diverse range of vocational and professional programs in fields such as Education, Physiotherapy, Information Technology, Management, Environmental Science, Library Science, and Biotechnology.
         
-        <p style="text-align: justify;">With its enduring commitment to academic excellence, research, and holistic growth, the University continues to be a hub of knowledge and innovation, nurturing future scholars and professionals. At present, the Vice-Chancellor, Prof. Shashi Pratap Shahi, is actively working to restore and enhance the University’s proud legacy by reinforcing its focus on quality education and encouraging faculty members to engage in conferences, seminars, and workshops at both national and international platforms.</p>
+        With its enduring commitment to academic excellence, research, and holistic growth, the University continues to be a hub of knowledge and innovation, nurturing future scholars and professionals. At present, the Vice-Chancellor, Prof. Shashi Pratap Shahi, is actively working to restore and enhance the University’s proud legacy by reinforcing its focus on quality education and encouraging faculty members to engage in conferences, seminars, and workshops at both national and international platforms.</p>
       
 
       <div class="cols" style="margin-top:18px;">
         <div class="col">
           <p class="card">
             <h3 style="margin:0 0 8px;" class="committee-header">About the Department</h3>
-            <p style="text-align: justify;">TThe Postgraduate Department of Mathematics at Magadh University was established in 1962. In its formative years, classes were conducted in a rented building, as the University had not yet developed its own infrastructure. The Department’s journey began with the appointment of Dr. Shyam Sundar Prasad, who joined after being transferred from Nalanda College, Bihar Sharif. He was soon joined by eminent academicians including Dr. R. Shukla (Professor & Head), Dr. Shaligram Singh (Reader), Dr. Ziaul Hasan (Lecturer), and Dr. P. Tiwari (Lecturer).</p>
+            <p style="text-align: justify;">The Postgraduate Department of Mathematics at Magadh University was established in 1962. In its formative years, classes were conducted in a rented building, as the University had not yet developed its own infrastructure. The Department’s journey began with the appointment of Dr. Shyam Sundar Prasad, who joined after being transferred from Nalanda College, Bihar Sharif. He was soon joined by eminent academicians including Dr. R. Shukla (Professor & Head), Dr. Shaligram Singh (Reader), Dr. Ziaul Hasan (Lecturer), and Dr. P. Tiwari (Lecturer).</p>
 
             <p style="text-align: justify;"></p> With the relocation of the University to its permanent campus at Bodh Gaya on December 15, 1969, the Department of Mathematics also moved into a newly constructed facility. The spacious and well-equipped environment provided a strong foundation for advancing both teaching and research activities.</p>
               
@@ -531,6 +687,18 @@
         <div >
           <h2 class="committee-header">About the Conference</h2>
           <p>The conference aims to serve as a dynamic platform for academicians, researchers and industry experts to share, exchange, and disseminate their knowledge on recent developments and emerging trends in Pure Mathematics, Applied Mathematics, Computer Science, Physics, and Chemistry. A special focus is placed on motivating and engaging young researchers and students.</p>  
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div >
+          <h2 class="committee-header">About the Conference sponser </h2>
+          
+           <div class="speaker-card underline">
+                    <img src="logo2.png" alt="xyz">
+                    <h3 class="underline">Soft Computing Research Society (SCRS) </h3>
+                    <p>University </p>
+            </div>
         </div>
       </div>
     </section>
@@ -620,136 +788,189 @@
       
     </section>
 
-    <!-- COMMITTEE --> <!--
-    <section id="committee" class="card">
-      <h2>Organizing Committee</h2>
-      <p><strong>Chief Patron:</strong> </p>
-        <ul class="committee-list">
-          <li>Prof. S. P. Shahi, Hon’ble Vice-Chancellor, M.U., Bodh Gaya</li>
-        </ul>
-        
-      <p><strong>Patron:</strong> </p>
-        <ul class="committee-list">
-          <li>Prof. B. R. K. Sinha, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
-          <li>Dr. Binod Kumar Manglam, Registrar, M.U., Bodh Gaya</li>
-        </ul>
-      <p><strong>Convener:</strong> </p>
-        <ul class="committee-list">
-            <li>Dr. Sunil Suman, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
-          </ul>
-        
-        
-      <p><strong>Co-Convener:</strong> </p>
-        <ul class="committee-list">
-            <li>Dr. S. K. Tiwari, Associate Professor, Dept of Mathematics, M.U., Bodh Gaya</li>
-          </ul>
-
-      <p><strong>Organizing Secretaries:</strong> </p>
-            <ul class="committee-list">
-              <li>Dr. Amar Kishor, Department of Mathematics, M.U., Bodh Gaya</li>
-              <li>Dr. Kumar Vishal, Department of Mathematics, M.U., Bodh Gaya</li>
-            </ul>
-      <p><strong>Treasurer:</strong> </p>
-              <ul class="committee-list">
-                <li>Dr. Pintu Samanta, Department of Mathematics, M.U., Bodh Gaya</li>
-              </ul>
-      <p><strong>Members:</strong> </p>
-              <ul class="committee-list">
-                <li>Dr. Prayag Prasad, Dept of Mathematics, M.U., Bodh Gaya</li>
-                <li>Dr. Manoj Kumar Singh, Dept of Mathematics, M.U., Bodh Gaya</li>
-                <li>Dr. Nitisha Bharti, Dept of Mathematics, M.U., Bodh Gaya </li>
-                <li>Dr. Dharmendra Kumar, Department of CS & IT, M.U., Bodh Gaya </li>
-                <li>Mr. Aditya Bharti, Department of CS & IT, M.U., Bodh Gaya</li>
-              </ul>
-              
-
-      <p><strong>Tentative List of Resource Persons:</strong> </p>
-              <ul>
-                <li>Prof. Nikhil Ranjan Pal, ISI Kolkata</li>
-                <li>Prof. Subir Das, IIT (BHU), Varanasi</li>
-                <li>Dr. Debasis Das, IIT, Jodhpur</li>
-                <li>Prof. Jagdish Chand Bansal, South Asian University, New Delhi </li>
-                <li>Dr. Sanjeev A. Sahu, IIT(ISM) Dhanbad</li>
-                <li>Dr. Jai Prakash, Banaras Hindu University, Varanasi </li>
-                <li>Dr. Rishav Singh, IIT Patna</li>
-                <li> </li>
-                <li> </li>
-                <li> </li>
-                <li> </li>
-                <li> </li>
-                <li> </li>
-                <li> </li>
-                <li> </li>
-              </ul>
-
-      <h3 style="margin-top:14px;">Tentative Resource Persons</h3>
-      <p>Prof. Nikhil Ranjan Pal (ISI Kolkata), Prof. Subir Das (IIT BHU), Dr. Debasis Das (IIT Jodhpur), Prof. Jagdish Chand Bansal (South Asian University), and others.</p>
-    </section> -->
-
     <section id="committee" class="section">
       <div class="container">
         
         <!-- Committee Header Bar -->
         <div class="committee-header">Committee</div>
     
-        <!-- Chief Patrons -->
+        <!-- Chief Patron-->
+
         <div class="committee-block">
           <h3>Chief Patrons</h3>
-          <ul class="committee-list">
-            <li>Prof. S. P. Shahi, Hon’ble Vice-Chancellor, M.U., Bodh Gaya</li>
-          </ul>
+           <div class="committee-columns ">
+            <ul class="committee-list">
+              <!-- Speaker 1 -->
+                  <div class="speaker-card underline">
+                    <img src="pic/Prof_s_p_sahi.jpg" alt="Prof. S. P. Shahi<br> Hon’ble Vice-Chancellor">
+                    <h3>Prof. S. P. Shahi<br> Hon’ble Vice-Chancellor</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div> 
+          </div>
         </div>
 
         <!-- Patron-->
 
         <div class="committee-block">
           <h3>Patrons</h3>
-          <ul class="committee-list">
-            <li>Prof. B. R. K. Sinha, Pro Vice-Chancellor, M.U., Bodh Gaya</li>
-            <li>Dr. Binod Kumar Manglam, Registrar, M.U., Bodh Gaya</li>
-          </ul>
-        </div>
-
-        <!--  Conference Mentor-->
-        <div class="committee-block">
-          <h3>Conference Mentor</h3>
-          <ul class="committee-list">
-            <li> Dr. M. K. Singh, Professor, Department of Mathematics, M.U., Bodh Gaya
-          </ul>
+           <div class="committee-columns">
+            <ul class="committee-list">
+              <!-- Speaker 1 -->
+                  <div class="speaker-card underline">
+                    <img src="pic/Prof_b_r_k_Singh.jpg" alt="xyz">
+                    <h3>Prof. B. R. K. Sinha <br>Pro Vice-Chancellor</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div> 
+             
+            </ul>
+            <ul class="committee-list">
+                <!-- Speaker 1 -->
+                  <div class="speaker-card underline">
+                    <img src="pic/Dr_Binod_kumar_mangalam.jpg" alt="xyz">
+                    <h3>Dr. Binod Kumar Manglam <br> Registrar</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div>
+            </ul>
+          </div>
         </div>
 
         <!--   Convener  -->
+
         <div class="committee-block">
           <h3>Convener</h3>
-          <ul class="committee-list">
-            <li>Dr. Sunil Suman, Head/Incharge, Department of Mathematics, M.U., Bodh Gaya</li>
-          </ul>
+           
+            <ul class="committee-list">
+              <!-- Speaker 1 -->
+                  <div class="speaker-card underline" style="height: 350px;">
+                    <img src="pic/hod2.jpg" alt="xyz">
+                    <h3 class="underline">Dr. Sunil Suman, Head/Incharge,
+                       Department of Mathematics</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div> 
+          
         </div>
 
         <!--  CO-COnvener -->
+
         <div class="committee-block">
           <h3>Co-Convener</h3>
-          <ul class="committee-list">
-            <li>Dr. S. K. Tiwari, Associate Professor, Dept of Mathematics, M.U., Bodh Gaya</li>
-          </ul>
+        
+            <ul class="committee-list">
+              <!-- Speaker 1 -->
+                  <div class="speaker-card underline" style="height: 300px;">
+                    <img src="pic/Sanjay_Tiwari_Sirg.jpeg" alt="xyz">
+                    <h3>Dr. S. K. Tiwari, Associate Professor, Dept of Mathematics</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div> 
+          
         </div>
 
         <!--   Organizing Secretaries -->
         <div class="committee-block">
-          <h3>Chief Patrons</h3>
-          <ul class="committee-list">
-            <li>Dr. Amar Kishor, Department of Mathematics, M.U., Bodh Gaya</li>
-            <li>Dr. Kumar Vishal, Department of Mathematics, M.U., Bodh Gaya</li>
-          </ul>
+          <h3>Organizing Secretaries </h3>
+          <div class="committee-columns">
+            <ul class="committee-list">
+              <!-- Speaker 1 -->
+                  <div class="speaker-card underline">
+                    <img src="pic/Amar_Sirg.gif" alt="xyz">
+                    <h3>Dr. Amar Kishor, Department of <br> Mathematics</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div> 
+             
+            </ul>
+            <ul class="committee-list">
+                <!-- Speaker 1 -->
+                  <div class="speaker-card underline">
+                    <a href="https://scholar.google.co.in/citations?user=XQJEF4gAAAAJ&hl=en"><img src="pic/vishal_Sirg.jpg" alt="xyz"></a>
+                    <a href="https://scholar.google.co.in/citations?user=XQJEF4gAAAAJ&hl=en"><h3>Dr. Kumar Vishal, Department of <br> Mathematics</h3></a>
+                    <p> M.U., Bodh Gaya </p>
+                  </div>
+            </ul>
+          </div>
         </div>
 
         <!-- Treasurer -->
 
         <div class="committee-block">
-          <h3>Treasurer</h3>
-          <ul class="committee-list">
-            <li>Dr. Pintu Samanta, Department of Mathematics, M.U., Bodh Gaya</li>
-          </ul>
+          <h3>Trasurer</h3>
+        
+            <ul class="committee-list">
+              <!-- Speaker 1 -->
+                  <div class="speaker-card underline" >
+                    <img src="pic/pintu_Sirg.jpg" alt="xyz">
+                    <h3>Dr. Pintu Samanta, Department of Mathematics</h3>
+                    <p> M.U., Bodh Gaya </p>
+                  </div> 
+          
+        </div>
+
+
+
+        
+         <div class="col">
+          <div >
+            <h3 style="margin:0 0 8px;" class="committee-header">keynote speaker </h3>
+            <!-- Speaker -->
+            <section class="ommittee-block" >
+                <div class="speakers-grid">
+              
+                  <!-- Speaker 1 -->
+                  <div class="speaker-card underline">
+                   <a  href="https://isi.irins.org/profile/42813"> <img src="pic/Nikhil_Ranjan_pal.webp" alt="Prof. Nikhil Ranjan Pal"> </a>
+                   <a href="https://isi.irins.org/profile/42813"> <h3 class="underline">Prof. Nikhil Ranjan Pal </h3> </a>
+                    <p>ISI Kolkata </p>
+                  </div>
+              
+                  <!-- Speaker 2 -->
+                  <div class="speaker-card underline">
+                    <a href="https://sau.int/faculty/jagdish-chand-bansal/"><img src="pic/jagdish_chand_bansal.png" alt="Prof. Jagdish Chand Bansal"> </a>
+                   <a href="https://sau.int/faculty/jagdish-chand-bansal/"> <h3 class="underline">Prof. Jagdish Chand Bansal</h3></a>
+                    <p>South Asian University, New Delhi </p> 
+                  </div>
+              
+                  <!-- Speaker 3 -->
+                  <div class="speaker-card underline ">
+                    <a href=" https://www.iitbhu.ac.in/dept/mat/people/sdasapm "> 
+                    <img src="pic/subir_Das.jpg" alt="Prof. Subir Das"> </a>
+                    <a href=" https://www.iitbhu.ac.in/dept/mat/people/sdasapm "><h3 class="underline"> Prof. Subir Das</h3> </a>
+                    <p>IIT (BHU), Varanasi</p>
+                  </div>
+
+                   <!-- Speaker 4 -->
+                   <div class="speaker-card underline">
+                   <a href="https://scholar.google.com/citations?user=_MjXvxQAAAAJ&hl=en">  <img src="pic/debasis_Das.jpg" alt="Dr. Debasis Das"> </a>
+                   <a href="https://scholar.google.com/citations?user=_MjXvxQAAAAJ&hl=en"> <h3 class="underline">Dr. Debasis Das</h3> </a>
+                    <p>IIT Jodhpur</p>
+                  </div>
+              
+                  <!-- Speaker 5 -->
+                  <div class="speaker-card underline">
+                    <a href=" https://scholar.google.com/citations?user=8nEvG00AAAAJ&hl=en"><img src="pic/jai_prakash.jpg" alt="Dr. Jai Prakash"></a>
+                    <a href="https://scholar.google.com/citations?user=8nEvG00AAAAJ&hl=en"><h3 class="underline">Dr. Jai Prakash </h3></a>
+                    <p>BHU, Varanasi </p>
+                  </div>
+              
+                  <!-- Speaker 6 -->
+                  <div class="speaker-card underline">
+                    <a href="https://scholar.google.com/citations?user=u93EDQMAAAAJ&hl=en"><img src="pic/sanjeev_A_Sahu.jpg" alt="Dr. Sanjeev A. Sahu"> </a>
+                    <a href="https://scholar.google.com/citations?user=u93EDQMAAAAJ&hl=en"><h3 class="underline">Dr. Sanjeev A. Sahu</h3> </a>
+                    <p>IIT(ISM) Dhanbad </p>
+                  </div>
+              
+                  <!-- Speaker 7 -->
+                  <div class="speaker-card underline">
+                   <a href="https://scholar.google.com/citations?user=JLCK78MAAAAJ&hl=en"> <img src="pic/rishav_Singh.jpg" alt="Dr. Rishav Singh"></a>
+                   <a href="https://scholar.google.com/citations?user=JLCK78MAAAAJ&hl=en"> <h3 class="underline">Dr. Rishav Singh</h3></a>
+                    <p>IIT Patna</p>
+                  </div>
+
+              
+                
+                  
+                </div>
+              </section>
+              
+          </div>
         </div>
 
         <!-- Members -->
@@ -757,22 +978,12 @@
         <div class="committee-block">
           <h3>Members</h3>
           <ul class="committee-list">
-                 <li>Dr. Prayag Prasad, Dept of Mathematics, M.U., Bodh Gaya</li>
+                <li>Prof. M. K. Singh, Department of Mathematics, M.U., Bodh Gaya</li>
+                <li>Dr. Prayag Prasad, Dept of Mathematics, M.U., Bodh Gaya</li>
                 <li>Dr. Manoj Kumar Singh, Dept of Mathematics, M.U., Bodh Gaya</li>
                 <li>Dr. Nitisha Bharti, Dept of Mathematics, M.U., Bodh Gaya </li>
                 <li>Dr. Dharmendra Kumar, Department of CS & IT, M.U., Bodh Gaya </li>
                 <li>Mr. Aditya Bharti, Department of CS & IT, M.U., Bodh Gaya</li>          </ul>
-        </div>
-
-        <!--  Tentative list -->
-        <div class="committee-block">
-          <h3>Tentative List</h3>
-          <ul class="committee-list">
-              <li>Prof. Nikhil Ranjan Pal, ISI Kolkata</li>
-              <li>Prof. Subir Das, IIT (BHU), Varanasi </li>
-              <li>Dr. Debasis Das, IIT, Jodhpur </li>
-              <li>Dr. Sanjeev A. Sahu, IIT(ISM) Dhanbad   </li>
-              <li>Dr. Jai Prakash, Banaras Hindu University, Varanasi </li>          </ul>
         </div>
 
         <!--   Advisory Committee -->
@@ -781,30 +992,31 @@
           <h3>Advisory Committee </h3>
           <div class="committee-columns">
             <ul class="committee-list">
-              <li>Prof. Nikhil Ranjan Pal, ISI Kolkata</li>
-              <li>Prof. S.N.P. Yadav “Deen”, Dean Science, Magadh University, Bodh Gaya</li>
+              <li>Prof. S.N.P. Yadav “Deen”, Dean Science, M. U., Bodh Gaya</li>
+              <li>Prof. Upendra Kumar, Head, Deptartment of Geography, M.U., Bodh Gaya</li>
               <li>Prof. Vijay Kumar Verma, Head, Dept. of Physics, M.U., Bodh Gaya</li>
               <li>Prof. D. K. Keshari, Head, Dept. of Zoology, M.U., Bodh Gaya</li>
               <li>Dr. Atul Kumar Srivastava, Head, Dept. of Chemistry, M.U., Bodh Gaya</li>
               <li>Dr. Ravi Kumar Singh, Head, Dept. of Botany, M.U., Bodh Gaya</li>
+              <li>Dr. Amit Kumar Singh, Head, Department of Environmental Science, M.U., Bodh Gaya</li>
               <li>Prof. Ranjan Kumar, Aryabhatta College, Univ. of Delhi, New Delhi</li>
-              <li>Dr. Md. Jeyauddin, Jubail Industrial College, Jubail, Saudi Arabia</li>
               <li>Dr. Mithilesh Kumar Chaube, IIIT-Naya Raipur</li>
               <li>Prof. Mithilesh Singh, V.B.S. Purvanchal University, Jaunpur</li>
+              <li>Prof. Anirban Das, U.E.M., Kolkata</li>
               <li>Prof. Roushan Kumar, Central University of South Bihar, Gaya</li>
               <li>Prof. Manoj Prakash Tripathi, U. P. College, Varanasi</li>
-              <li>Prof. K.B. Yadav, T.D. College, Jaunpur</li>
+             <!-- <li>Prof. K.B. Yadav, T.D. College, Jaunpur</li>
               <li>Prof. Anirban Das, U.E.M. Kolkata</li>
-              <li>Dr. Amar Nath Chatterjee, K.L.S. College, Nawada</li>
+              <li>Dr. Amar Nath Chatterjee, K.L.S. College, Nawada</li> -->
             </ul>
             <ul class="committee-list">
+              <li>Dr. Md. Zeyauddin, Jubail Industrial College, Jubail, Saudi Arabia</li>
               <li>Dr. Amit Kumar, IIT(BHU), Varanasi</li>
               <li>Dr. Navin Jha, U. P. College, Varanasi</li>
               <li>Dr. P. K. Gupta, NIT Silichar</li>
               <li>Dr. Anupam Priyadarshi, Banaras Hindu University, Varanasi</li>
               <li>Dr. Rakesh Kumar, IIT Mandi</li>
-              <li>Dr. Varun Kumar, Mahatma Gandhi Kashi Vidyapeeth, Varanasi</li>
-              <li>Dr. Mayank Srivastava, P.G. College Ghazipur</li>
+              <li>Dr. Mayank Srivastava, P.G. College, Ghazipur</li>
               <li>Dr. Lokesh Kumar, T.M.B.U, Bhagalpur</li>
               <li>Dr. Shree Nath Sharma, S.S. College, Jehanabad</li>
               <li>Dr. N. P. Singh, S.N. Sinha College, Jehanabad</li>
@@ -813,25 +1025,13 @@
               <li>Dr. Manish Kr Singh, J. J. College, Gaya</li>
               <li>Mr. Sudip Kumar, S. Sinha College, Aurangabad</li>
               <li>Dr. Saurabh Kr. Agrawal, Bharati Vidyapeeth College of Engineering, New Delhi</li>
+              <li>Dr. Amar Nath Chatterjee, K.L.S. College, Nawada</li>
+              <li>Prof. K.B. Yadav, T. D. College, Jaunpur</li>
+              <li>Dr. Amit Kumar Rahul, VIT Chennai</li>
             </ul>
           </div>
         </div>
 
-         <div class="col">
-          <div >
-            <h3 style="margin:0 0 8px;" class="committee-header">keynote speaker </h3>
-            
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-          </div>
-        </div>
 
 
     
@@ -842,7 +1042,7 @@
 
     <!-- HOW TO REACH -->
     <section id="reach" class="card">
-      <h2>How to Reach</h2>
+      <h2 class="committee-header">How to Reach</h2>
       <p>Magadh University campus is located on Gaya–Dobhi Road — approximately 17 km from Gaya Railway Station and 7 km from Gaya Airport. Gaya Railway Station lies on the main line of Eastern Railway. The campus is ~13 km from Gaya International Airport and ~98 km from Patna Airport.</p>
       <section id="location" class="location-section">
         <h2>📍 Conference Location</h2>
@@ -871,8 +1071,18 @@
     <!-- CONTACT -->
     <section id="contact" class="card" >
       <h2 class="committee-header">Contact</h2>
-      <p><strong>Organizing Secretaries:</strong> Dr. Amar Kishor (8789414148), Dr. Kumar Vishal (8385095319)</p>
-      <p><strong>Treasurer:</strong> Dr. Pintu Samanta (9543923344)</p>
+      <p class="underline"><strong>Organizing Secretaries:</strong> 
+        <ul>
+          <li>Dr. Amar Kishor, Department of Mathematics, M.U., Bodh Gaya (8789414148)</li>
+          <li>Dr. Kumar Vishal, Department of Mathematics, M.U., Bodh Gaya (8385095319)</li>
+        </ul>       
+        
+        
+       
+      <p class="underline"><strong>Treasurer:</strong>
+        <ul>
+          <li> Dr. Pintu Samanta (9543923344)</li>
+        </ul></p>
       <p><strong>Email:</strong> <a href="mailto:rtmcs2025@gmail.com">rtmcs2025@gmail.com</a></p>
     </section>
 
@@ -969,8 +1179,16 @@
       form.reset();
     }
 
+
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+
     // Mobile: show a simple menu toggle if needed (small screens)
-    // (PSIT style keeps menu minimal so no heavy menu implemented)
+
   </script>
 </body>
 </html>
