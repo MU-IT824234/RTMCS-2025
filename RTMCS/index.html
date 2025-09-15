@@ -45,30 +45,30 @@
       justify-content:space-between;
       padding:10px 0px;
     }
-    .brand { display:flex; align-items:center; }
+    .brand { display:flex; align-items:center;  }
     
     .brand img {
         height: 130px;         /* fixed height */
-        width: 140px;          /* fixed width */
+        width: 150px;          /* fixed width */
         object-fit: contain;  /* keeps proportions inside the box */
         /*margin-right: 1px; */
       }
 
-    .brand h4{ margin:0; color:var(white); font-size:18px; /*letter-spacing:2px; */ }
+    .brand h4{ margin: -40px;; color:var(--mu-blue); font-size:18px; /*letter-spacing:2px; */ }
     .menu { display:flex; gap:16px; align-items:center; }
     .menu a{
-      color:var(white); text-decoration:none; font-weight:600; font-size:16px;
+      color:var(--mu-blue); text-decoration:none; font-weight:600; font-size:18px;
       padding:8px 10px; border-radius:8px;
     }
     .menu a:hover{ background:rgba(0,0,0,0.04); }
 
 
-    .left-logos img {
+   /* .left-logos img {
       height: 110px;   
       width: 150px;    
       object-fit: contain;
-      margin-right: 0px; 
-      vertical-align: middle; 
+      margin-right: 10px; 
+      vertical-align: middle; */
     }
     /* HERO */
     .hero{
@@ -112,8 +112,7 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
     .btn-gold{ background:var(--mu-gold); color:var(--mu-blue); }
-    /*.btn-white{ background:transparent; color:#fff; border: 10px solid white ; border-color: white; } */
-
+    
     /* new editing to button white*/
 
     .btn-white {
@@ -145,39 +144,7 @@
     /* CONTENT WRAPPER */
     .wrap{ max-width:var(--max-width); margin:0 auto; padding:32px 18px; }
 
-    /*QUICK INFO */
-    /* .quick-info {
-      position: relative;
-      background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(218, 165, 32, 0.85)),
-                  url('hero-bg.jpg') center/cover no-repeat;
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 18px;
-      padding: 24px;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .quick-info:hover {
-      transform: rotateY(6deg) rotateX(3deg) scale(1.04);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
-    }
-    .quick-info h3{
-        margin-top: 0;
-        font-size: 22px;
-        color: #ffffff; /* pure white */
-        letter-spacing: 0.5px;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-      }
-   /*
-    .quick-info p{
-        margin: 10px 0;
-        font-size: 16px;
-        font-weight: 600;
-        color: #ffffff; /* pure white */
-      }  */
-
+   
     /* qr code */
     .qr-code-box {
         margin-top: 16px;
